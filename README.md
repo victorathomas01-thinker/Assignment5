@@ -4,6 +4,19 @@ Based on the instructor's [Assignment 5 starter](https://github.com/samfallahian
 
 This FastAPI project implements create, read-all, read-one, update, and delete for all five tables: **sandwiches**, **resources**, **recipes**, **orders**, and **order_details**. The 20 required new endpoints extend the original Orders example.
 
+## Portfolio summary
+
+**FastAPI · SQLAlchemy · Pydantic · SQLite / MySQL · pytest · GitHub Actions**
+
+This coursework API demonstrates a five-entity relational data model and **25 REST endpoints** for sandwiches, ingredients/resources, recipes, orders, and order details. It supports CRUD operations, validation, related-record serialization, and predictable HTTP status/error responses.
+
+- **API design:** Request/response validation through Pydantic schemas, modular controller functions, and automatic OpenAPI/Swagger documentation.
+- **Data integrity:** SQLAlchemy relationships and deliberate handling of duplicate and foreign-key conflicts.
+- **Testing:** Nine pytest tests run against disposable SQLite with foreign keys enabled; the project's new GitHub Actions workflow runs the same suite on pull requests and pushes.
+- **Boundary:** Tests do not certify production security, MySQL compatibility, deployment, or performance. This is an educational API, derived in part from the linked instructor starter.
+
+For a quick code review, start with [API routes](api/main.py), [models](api/models/models.py), [controllers](api/controllers/), and [tests](api/tests/).
+
 ## Project structure
 
 - `api/models/models.py` — five SQLAlchemy table definitions and relationships
