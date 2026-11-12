@@ -4,6 +4,19 @@ Based on the instructor's [Assignment 5 starter](https://github.com/samfallahian
 
 This FastAPI project implements create, read-all, read-one, update, and delete for all five tables: **sandwiches**, **resources**, **recipes**, **orders**, and **order_details**. The 20 required new endpoints extend the original Orders example.
 
+## Portfolio summary
+
+**FastAPI · SQLAlchemy · Pydantic · SQLite / MySQL · pytest · GitHub Actions**
+
+This coursework API demonstrates a five-entity relational data model and **25 REST endpoints** for sandwiches, ingredients/resources, recipes, orders, and order details. It supports CRUD operations, validation, related-record serialization, and predictable HTTP status/error responses.
+
+- **API design:** Request/response validation through Pydantic schemas, modular controller functions, and automatic OpenAPI/Swagger documentation.
+- **Data integrity:** SQLAlchemy relationships and deliberate handling of duplicate and foreign-key conflicts.
+- **Testing:** 13 collected pytest cases passed in [GitHub Actions](https://github.com/victorathomas01-thinker/Assignment5/actions/runs/43330581113), using disposable SQLite with foreign keys enabled. The workflow runs on pull requests and pushes.
+- **Boundary:** Tests do not certify production security, MySQL compatibility, deployment, or performance. This is an educational API, derived in part from the linked instructor starter.
+
+For a quick code review, start with [API routes](api/main.py), [models](api/models/models.py), [controllers](api/controllers/), and [tests](api/tests/).
+
 ## Project structure
 
 - `api/models/models.py` — five SQLAlchemy table definitions and relationships
@@ -59,7 +72,7 @@ All five table groups return `201` when records are created, `200` when successf
 python -m pytest api/tests -q
 ```
 
-The nine tests use an isolated SQLite database, with foreign-key enforcement enabled. They check CRUD operations for every table, order relationships, missing records, invalid values, duplicate names, and foreign-key violations. Passing these does **not** verify your local MySQL login; also run the app and test its API docs with MySQL.
+The pytest suite contains nine test functions with parametrized cases (13 cases passed in the documented GitHub Actions run). They use an isolated SQLite database, with foreign-key enforcement enabled. They check CRUD operations for every table, order relationships, missing records, invalid values, duplicate names, and foreign-key violations. Passing these does **not** verify your local MySQL login; also run the app and test its API docs with MySQL.
 
 ## GitHub submission
 
